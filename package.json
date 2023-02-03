@@ -1,0 +1,26 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "Thank you for taking the time to review my submission for Module 18. I appreciate your feedback and I will make any neccessary changes based off of your grading.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sheogorath9/Social-Network-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sheogorath9/Social-Network-API/issues"
+  },
+  "homepage": "https://github.com/Sheogorath9/Social-Network-API#readme",
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.0"
+  }
+}
