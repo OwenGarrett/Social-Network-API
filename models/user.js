@@ -2,16 +2,17 @@
 const mongoose = require('mongoose');
 
 // Create a new instance of the Mongoose schema to define shape of each document
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   // Add individual properties and their types
   // Setting required to true will disallow null values
   username: { type: String, required: true, unique: true, trim: true },
   email: { type: String, required: true, unique: true, match: /.+\@.+\..+/, },
-  thoughts: [ { type: Schema.Types.ObjectID, ref: "Thought", }, ],
-  friends: [ { type: Schema.Types.ObjectID, ref: "User", }, ],
+  thoughts: [ { type: mongoose.Schema.Types.ObjectID, ref: "Thought", }, ],
+  friends: [ { type: mongoose.Schema.Types.ObjectID, ref: "User", }, ],
 
   // Use built in date method to get current date
-  createdAt: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now }
+},
 
   {
     toJSON: {
@@ -20,13 +21,13 @@ const userSchema = new mongoose.Schema({
     id: false,
   }
 
-});
+);
 
 UserSchema.virtual('friendCount').get(function() {
     return this.friends.length;
   });
   
-  const User = model('User', UserSchema);
+  const User = mongoose.model('User', UserSchema);
   
   module.exports = User;
 
@@ -53,4 +54,4 @@ Item.create(
   (err) => (err ? handleError(err) : console.log('Created new document'))
 );
 
-module.exports = Item;
+module.exports = Item; */
