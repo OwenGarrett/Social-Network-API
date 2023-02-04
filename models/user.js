@@ -7,10 +7,32 @@ const userSchema = new mongoose.Schema({
   // Setting required to true will disallow null values
   username: { type: String, required: true, unique: true, trim: true },
   email: { type: String, required: true, unique: true, match: /.+\@.+\..+/, },
+  thoughts: [ { type: Schema.Types.ObjectID, ref: "Thought", }, ],
+  friends: [ { type: Schema.Types.ObjectID, ref: "User", }, ],
 
   // Use built in date method to get current date
   createdAt: { type: Date, default: Date.now },
+
+  {
+    toJSON: {
+      virtuals: true,
+    },
+    id: false,
+  }
+
 });
+
+UserSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
+  });
+  
+  const User = model('User', UserSchema);
+  
+  module.exports = User;
+
+
+/*
+
 
 // Using mongoose.model() to compile a model based on the schema
 // 'Item' is the name of the model
