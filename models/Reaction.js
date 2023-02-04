@@ -12,5 +12,7 @@ const reactionSchema = new mongoose.Schema({
 
 }),
 
-module.exports = ReactionSchema; 
+
+// requested assistance w syntax error from askBCS 2/4 
+module.exports =  ReactionSchema; 
  
