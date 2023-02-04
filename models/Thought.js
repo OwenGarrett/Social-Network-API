@@ -8,7 +8,7 @@ const thoughtSchema = new mongoose.Schema({
   thoughtText: { type: String, required: true, minLength: 1, maxLength: 280 },
   createdAt: { type: Date, default: Date.now },
   userName: { type: String, required: true, },
-  friends: [ { type: Schema.Types.ObjectID, ref: "User", }, ],
+  friends: [ { type: mongoose.Schema.Types.ObjectID, ref: "User", }, ],
 
   // Use built in date method to get current date
  reactions: [reaction],
