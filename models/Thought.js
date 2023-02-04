@@ -1,5 +1,6 @@
-// Define Mongoose
+// Define Mongoose and reactionSchema 
 const mongoose = require('mongoose');
+const reactionSchema = require('./Reaction');
 
 // Create a new instance of the Mongoose schema to define shape of each document
 const thoughtSchema = new mongoose.Schema({
@@ -11,21 +12,21 @@ const thoughtSchema = new mongoose.Schema({
   friends: [ { type: mongoose.Schema.Types.ObjectID, ref: "User", }, ],
 
   // Use built in date method to get current date
- reactions: [reaction],
-
+  reactions: [reactionSchema]
+},
   {
     toJSON: {
-      virtuals: true,
+      getters: true,
     },
     id: false,
   }
 
-});
+);
 
-ThoughtSchema.virtual('reactionCount').get(function() {
+thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
   });
   
-  const Thought = model('Thought', ThoughtSchema);
+  const Thought = mongoose.model('Thought', thoughtSchema);
   
   module.exports = Thought;

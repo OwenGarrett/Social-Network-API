@@ -10,9 +10,16 @@ const reactionSchema = new mongoose.Schema({
   userName: { type: String, required: true, },
   createdAt: { type: Date, default: Date.now },
 
-}),
+},
+{
+  toJSON: {
+    getters: true
+  },
+  id: false
+}
+)
 
 
 // requested assistance w syntax error from askBCS 2/4 
-module.exports =  ReactionSchema; 
+module.exports =  reactionSchema;
  
