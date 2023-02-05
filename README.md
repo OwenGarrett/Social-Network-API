@@ -18,7 +18,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 Description of app 
 
-Screenshot
+<img src="/assets/screenshot.png" alt="Screenshot" title="Live Screenshot">
 
 Link to video 
 
