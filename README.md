@@ -20,8 +20,8 @@ Description of app
 
 <img src="/assets/screenshot.png" alt="Screenshot" title="Live Screenshot">
 
-Link to video 
-
 <a href="https://drive.google.com/file/d/1r9F44FUk1GhSJQlIHDwBlsWTDk1Ju5_Z/view" target="_blank">
+
+Link to video
 
 OG 👽☯️
