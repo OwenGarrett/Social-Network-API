@@ -1,4 +1,5 @@
-const  User  = require('../models');
+// Adjusted this import of user based off of feedback from AskBCS. Super helpful! Thank you! 
+const  { User }  = require('../models');
 
 module.exports = {
   // Get all users
